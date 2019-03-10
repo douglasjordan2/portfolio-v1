@@ -18,7 +18,8 @@ class ActionButton extends Component {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      border: '1px solid gray'
+      border: '1px solid gray',
+      cursor: 'pointer'
     });
   }
 
