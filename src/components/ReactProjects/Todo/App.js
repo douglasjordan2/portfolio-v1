@@ -148,7 +148,7 @@ class App extends React.Component {
 
 const dailyTodos = [
   {
-    title: 'Meeting with Don Farber @ TAG',
+    title: 'Complete Edabit challenges.',
     id: uuid.v4(),
     complete: false,
     position: 1
@@ -181,7 +181,7 @@ const monthlyTodos = [
     position: 2
   },
   {
-    title: 'continue to study animation libraries',
+    title: 'Continue to study animation libraries',
     id: uuid.v4(),
     complete: false,
     position: 3
