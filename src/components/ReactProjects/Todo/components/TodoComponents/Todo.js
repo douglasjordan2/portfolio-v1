@@ -14,7 +14,7 @@ class extends Component {
       transition: isComplete ? `all 1s ease-out` : `margin-top 1s ease-out ${position / 5}s, opacity 1s ease-out ${position / 3}s`,
       background: '#6abed8',
       cursor: 'pointer',
-      width: '95%'
+      width: '94%'
     });
   }
 
