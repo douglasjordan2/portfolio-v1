@@ -7,7 +7,7 @@ class Icon extends Component {
       border: '2px solid red',
       position: 'absolute',
       top: visible ? '200%' : '-10px',
-      left: '-15%',
+      left: '-13%',
       border: '1px solid white',
       height: visible ? '400px' : '0',
       width: '500px',

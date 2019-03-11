@@ -92,7 +92,7 @@ class IconContainer extends Component {
       width: '400px',
       position: 'absolute',
       top: '5%',
-      right: 'calc(50vw - 200px)'
+      right: 'calc(50vw - 220px)'
     });
   }
 

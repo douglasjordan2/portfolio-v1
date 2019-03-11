@@ -148,7 +148,7 @@ class App extends React.Component {
 
 const dailyTodos = [
   {
-    title: 'Meeting with Don @ TAG',
+    title: 'Meeting with Don @ TAG.',
     id: uuid.v4(),
     complete: false,
     position: 1
