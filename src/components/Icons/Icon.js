@@ -35,10 +35,16 @@ class Icon extends Component {
         <div
           onClick = { () => this.props.openContent(id) }
           style = {{ cursor: 'pointer' }}
+          onMouseEnter = { () => this.props.removeDocClick() }
+          onMouseLeave = { () => this.props.addDocClick() }
         >
           { img }
         </div>
-        <div style = { this.contentStyles(visible) }>
+        <div 
+          style = { this.contentStyles(visible) }
+          onMouseEnter = { visible ? () => this.props.removeDocClick() : null }
+          onMouseLeave = { visible ? () => this.props.addDocClick() : null }
+        >
           { content }
         </div>
       </div>

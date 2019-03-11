@@ -41,6 +41,7 @@ class App extends Component {
       this.setState({ operand1: this.state.operand1 = this.state.acc == '' ? parseInt(this.state.operand1) : parseInt(this.state.acc) })
       this.setState({ acc: this.state.acc = '' })
       this.setState({ operator: this.state.operator = id })
+      this.setState({ displayVal: this.state.displayVal + ' ' + this.state.operator })
     }
   }
 
@@ -66,7 +67,7 @@ class App extends Component {
         break;
     }
 
-    this.setState({ displayVal: this.state.displayVal = calc })
+    this.setState({ displayVal: this.state.displayVal = calc + ' ' + this.state.operatorHold })
     this.setState({ operand1: this.state.operand1 = calc })
     this.setState({ acc: this.state.acc = '' })
     this.setState({ operator: this.state.operator = this.state.operatorHold })

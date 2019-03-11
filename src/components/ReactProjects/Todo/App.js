@@ -148,7 +148,7 @@ class App extends React.Component {
 
 const dailyTodos = [
   {
-    title: 'Complete Edabit challenges.',
+    title: 'Meeting with Don @ TAG',
     id: uuid.v4(),
     complete: false,
     position: 1
@@ -216,7 +216,8 @@ const h1 = {
 const tabContainer = {
   height: '80%',
   position: 'relative',
-  overflow: 'scroll'
+  overflow: 'scroll',
+  overflowX: 'hidden'
 }
 
 export default App;

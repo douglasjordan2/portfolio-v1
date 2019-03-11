@@ -6,6 +6,7 @@ class extends Component {
     return ({
       display: 'flex',
       justifyContent: 'space-between',
+      alignItems: 'center',
       padding: isComplete ? '0' : '15px 5px',
       border: '1px solid black',
       opacity: isActive ? '1' : '0',
@@ -14,7 +15,8 @@ class extends Component {
       transition: isComplete ? `all 1s ease-out` : `margin-top 1s ease-out ${position / 5}s, opacity 1s ease-out ${position / 3}s`,
       background: '#6abed8',
       cursor: 'pointer',
-      width: '94%'
+      width: '95%',
+      fontSize: '1.2rem'
     });
   }
 

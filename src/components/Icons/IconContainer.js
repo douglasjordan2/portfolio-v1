@@ -9,7 +9,7 @@ class IconContainer extends Component {
       {
         img: <i class="fas fa-info-circle"></i>,
         content: 
-        <p>I'm Douglas. I'm a student studying web development. I find it difficult to talk about myself, but I'll give it a shot.
+        <p style = {{ fontSize: '1.2rem' }}>I'm Douglas.<br />I'm a student studying web development.<br />I find it difficult to talk about myself, but I'll give it a shot.
         <br /> <br />
         I started my coding journey in August of 2018. At present, it's been about 3/4 of a year of intense study and practice, and I can't help but feel proud of what I've accomplished so far. I made an ugly, yet functional Texas Holdem game less than 2 months into learning Javascript. I got accepted into an amazing school 3 months into the journey, at which I've received the highest grade possible on all of my projects. Beyond my personal achievements, above all, I enjoy pair programming and helping my classmates. I consider helping others succeed the most important factor in my own success.
         <br /> <br />
@@ -105,6 +105,25 @@ class IconContainer extends Component {
       }
       return icon;
     }) })
+
+    return this.addDocClick()
+  }
+
+  removeAll = () => {
+    this.setState({ icons: this.state.icons.map(icon => {
+      icon.visible = false;
+      return icon;
+    }) })
+
+    return this.removeDocClick()
+  }
+
+  addDocClick = () => {
+    return document.addEventListener('click', this.removeAll)
+  }
+
+  removeDocClick = () => {
+    return document.removeEventListener('click', this.removeAll)
   }
 
   render() {
@@ -114,6 +133,8 @@ class IconContainer extends Component {
           <Icon 
             icon = { icon }
             openContent = { this.openContent }
+            addDocClick = { this.addDocClick }
+            removeDocClick = { this.removeDocClick }
           />
         ))}
       </div>
