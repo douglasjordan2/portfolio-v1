@@ -9,8 +9,10 @@ export default class SearchBar extends Component {
         type="text"
         onChange = { this.props.handleChange }
         style = {{ 
-          marginRight: '2%' ,
-          borderRadius: '5px'
+          marginRight: '5%' ,
+          borderRadius: '5px',
+          width: '62%',
+          height: '15px'
         }}
       />
     )

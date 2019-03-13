@@ -6,7 +6,7 @@ class CalculatorDisplay extends Component {
   render() {
     return (
       <div style = {{
-        height: '75px',
+        height: '20%',
         width: '100%',
         backgroundColor: '#000',
         color: 'white',

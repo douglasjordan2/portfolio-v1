@@ -115,11 +115,11 @@ class App extends React.Component {
     return (
       <div style = { container }>
         <h1 style = { h1 }>{ `What I'm doing ${this.state.activeTab ? 'today' : 'this month'}` }</h1>
-        <Search 
+        {/* <Search 
           handleChange = { this.handleChange }
           search = { this.search }
           searchVal = { this.state.search }
-        />
+        /> */}
         <div style = { tabContainer }>
           <DailyTab 
             activeTab = {this.state.activeTab}
@@ -195,8 +195,8 @@ const monthlyTodos = [
 ]
 
 const container = {
-  height: '500px',
-  width: '500px',
+  height: '100%',
+  width: '100%',
   border: '1px solid #e9e9e9',
   display: 'flex',
   flexDirection: 'column',
@@ -208,8 +208,9 @@ const container = {
 }
 
 const h1 = {
-  fontSize: '1.5rem',
-  margin: '3%',
+  fontSize: '0.8rem',
+  textAlign: 'center',
+  margin: '3% 0 5% 0',
   fontStyle: 'italic'
 }
 

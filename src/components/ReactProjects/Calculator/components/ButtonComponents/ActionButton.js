@@ -14,7 +14,7 @@ class ActionButton extends Component {
     return ({
       background: clicked ? 'white' : '#464646',
       color: clicked ? '#464646' : 'white',
-      height: '60px',
+      height: '20%',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',

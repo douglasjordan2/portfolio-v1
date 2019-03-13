@@ -7,15 +7,15 @@ class extends Component {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      padding: isComplete ? '0' : '15px 5px',
+      padding: isComplete ? '0' : '5% 2%',
       border: '1px solid black',
       opacity: isActive ? '1' : '0',
-      marginTop: isActive ? '0' : '20px',
+      marginTop: isActive ? '0' : '5%',
       marginBottom: '1%',
       transition: isComplete ? `all 1s ease-out` : `margin-top 1s ease-out ${position / 5}s, opacity 1s ease-out ${position / 3}s`,
       background: '#6abed8',
       cursor: 'pointer',
-      width: '95%',
+      width: '93%',
       fontSize: '1.2rem'
     });
   }
@@ -26,7 +26,7 @@ class extends Component {
       opacity: isComplete ? '0.3' : '1',
       textDecoration: isComplete ? 'line-through' : 'none',
       transition: isComplete ? 'all 1s ease-out' : 'none',
-      fontSize: isComplete ? '0.8rem' : '1.5rem'
+      fontSize: isComplete ? '0.8rem' : '1rem'
     });
   }
 

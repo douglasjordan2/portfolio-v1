@@ -78,9 +78,12 @@ class App extends Component {
   render() {
     return (
       <div style = {{
-          width: '300px',
+          width: '100%',
+          height: '100%',
           display: 'flex',
           flexWrap: 'wrap',
+          justifyContent: 'center',
+          alignItems: 'center'
         }}
       >
         <CalculatorDisplay 
@@ -89,9 +92,10 @@ class App extends Component {
         <div
           style = {{
             width: '75%',
-            height: 'auto',
+            height: '80%',
             display: 'flex',
             flexFlow: 'row-reverse wrap',
+            justifyContent: 'center',
             fontSize: '1.5rem',
           }}
         >
@@ -104,6 +108,7 @@ class App extends Component {
         <div
           style = {{
             width: '25%',
+            height: '80%',
             fontSize: '1.5rem',
             color: 'white',
 

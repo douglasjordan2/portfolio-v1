@@ -21,7 +21,7 @@ class Tab extends Component {
     return ({
       background: this.props.activeTab ? '#757571' : '#b0aba0',
       border: '1px solid black',
-      padding: '10px 20px',
+      padding: '1% 2%',
       position: 'absolute',
       top: '0',
       left: '1%',
@@ -52,5 +52,5 @@ class Tab extends Component {
 }
 
 const container = {
-  marginTop: '10%',
+  marginTop: '5%',
 }

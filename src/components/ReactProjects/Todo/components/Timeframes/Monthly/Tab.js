@@ -22,7 +22,7 @@ class Tab extends Component {
     return ({
       background: this.props.activeTab ? '#b0aba0' : '#757571',
       border: '1px solid black',
-      padding: '10px 20px',
+      padding: '1% 2%',
       position: 'absolute',
       top: '0',
       left: '21%',

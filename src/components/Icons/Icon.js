@@ -6,11 +6,11 @@ class Icon extends Component {
     return ({
       border: '2px solid red',
       position: 'absolute',
-      top: visible ? '200%' : '-10px',
-      left: '-13%',
+      top: visible ? '10vh' : '-10px',
+      right: 'calc(50% - 27vw)',
       border: '1px solid white',
-      height: visible ? '400px' : '0',
-      width: '500px',
+      height: visible ? '65vh' : '0',
+      width: '50vw',
       overflow: 'scroll',
       opacity: visible ? '1' : '0',
       background: '#e9e9e9',
@@ -22,6 +22,7 @@ class Icon extends Component {
       color: visible ? 'black' : '#e9e9e9',
       zIndex: visible ? '1' : '-1',
       cursor: 'default',
+      fontSize: '1rem',
       transition: visible ? 'top 1s ease, height 1s ease 0.5s, padding 1s ease 0.5s' : 'all 1s ease',
     });
   }

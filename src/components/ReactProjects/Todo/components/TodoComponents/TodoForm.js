@@ -43,7 +43,7 @@ class TodoForm extends Component {
 }
 
 const formHeader = {
-  fontSize: '1.2rem',
+  fontSize: '0.8rem',
   fontStyle: 'italic',
   marginLeft: '2%',
   paddingBottom: '20px'
@@ -65,7 +65,7 @@ const addTodo = {
 
 const inputText = {
   width: '90%',
-  padding: '10px',
+  padding: '2%',
   marginBottom: '1%'
 }
 
@@ -77,9 +77,9 @@ const buttonsContainer = {
 }
 
 const submit = {
-  padding: '10px',
+  padding: '2%',
   width: '48%',
-  fontSize: '1.2rem',
+  fontSize: '0.8rem',
   cursor: 'pointer',
   backgroundColor: 'white'
 }

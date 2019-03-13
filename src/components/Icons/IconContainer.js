@@ -24,21 +24,21 @@ class IconContainer extends Component {
       {
         img: <i class="fas fa-project-diagram"></i>,
         content: 
-        <div style = {{ fontSize: '1.5rem', lineHeight: '35px' }}>
-          <h1 style = {{ fontSize: '2rem', marginBottom: '10px' }}>Projects:</h1>
-          <a href="https://zen-wright-0d9b37.netlify.com/user-interface/great-idea-website/" target="_blank">Great Idea - pixel perfect design</a>
+        <div style = {{ fontSize: '1.2rem', lineHeight: '29px', color: 'black' }}>
+          <h1 style = {{ fontSize: '1.5rem', marginBottom: '10px', fontStyle: 'italic' }}>Projects:</h1>
+          <a style = {{ color: 'black' }} href="https://zen-wright-0d9b37.netlify.com/user-interface/great-idea-website/" target="_blank">Great Idea - pixel perfect design</a>
           <br />
-          <a href="https://zen-wright-0d9b37.netlify.com/ui-iii-flexbox/great-idea/index.html" target="_blank">Great Idea - flexbox</a>
+          <a style = {{ color: 'black' }} href="https://zen-wright-0d9b37.netlify.com/ui-iii-flexbox/great-idea/index.html" target="_blank">Great Idea - flexbox</a>
           <br />
-          <a href="https://zen-wright-0d9b37.netlify.com/sprint-challenge--user-interface/index.html" target="_blank">Sprint Challenge - multi-page with mobile styles</a>
+          <a style = {{ color: 'black' }} href="https://zen-wright-0d9b37.netlify.com/sprint-challenge--user-interface/index.html" target="_blank">Sprint Challenge - multi-page with mobile styles</a>
           <br />
-          <a href="https://zen-wright-0d9b37.netlify.com/responsive-web-design-i/index.html" target="_blank">Great Idea - adaptive design</a>
+          <a style = {{ color: 'black' }} href="https://zen-wright-0d9b37.netlify.com/responsive-web-design-i/index.html" target="_blank">Great Idea - adaptive design</a>
           <br />
-          <a href="https://zen-wright-0d9b37.netlify.com/responsive-web-design-ii/index.html" target="_blank">Great Idea - responsive design</a>
+          <a style = {{ color: 'black' }} href="https://zen-wright-0d9b37.netlify.com/responsive-web-design-ii/index.html" target="_blank">Great Idea - responsive design</a>
           <br />
-          <a href="https://zen-wright-0d9b37.netlify.com/preprocessing-ii/index.html" target="_blank">Fun Bus - preprocessing (LESS)</a>
+          <a style = {{ color: 'black' }} href="https://zen-wright-0d9b37.netlify.com/preprocessing-ii/index.html" target="_blank">Fun Bus - preprocessing (LESS)</a>
           <br />
-          <a href="https://zen-wright-0d9b37.netlify.com/sprint-challenge--advanced-css/index.html" target="_blank">Sprint Challenge - SpaceWalkers (LESS)</a>
+          <a style = {{ color: 'black' }} href="https://zen-wright-0d9b37.netlify.com/sprint-challenge--advanced-css/index.html" target="_blank">Sprint Challenge - SpaceWalkers (LESS)</a>
           <br />
           {/* 
           
@@ -46,15 +46,15 @@ class IconContainer extends Component {
           IMPORTANT -- take screenshots of javascript challenges 1 through 4 and do something cool with them (show on hover?). they don't have any rendering, but they should be shown in some way
           
           */}
-          <a href="https://zen-wright-0d9b37.netlify.com/newsfeed-components/index.html" target="_blank">Newsfeed - javascript components</a>
+          <a style = {{ color: 'black' }} href="https://zen-wright-0d9b37.netlify.com/newsfeed-components/index.html" target="_blank">Newsfeed - javascript components</a>
           <br />
-          <a href="https://zen-wright-0d9b37.netlify.com/tabs-components/index.html" target="_blank">Tabs - javascript components</a>
+          <a style = {{ color: 'black' }} href="https://zen-wright-0d9b37.netlify.com/tabs-components/index.html" target="_blank">Tabs - javascript components</a>
           <br />
-          <a href="https://zen-wright-0d9b37.netlify.com/user-interface-project-week/index.html" target="_blank">Project Week - final project for all previous units</a>
+          <a style = {{ color: 'black' }} href="https://zen-wright-0d9b37.netlify.com/user-interface-project-week/index.html" target="_blank">Project Week - final project for all previous units</a>
           <br /> <br />
-          <span>And finally, my poorly coded, unfinished, ugly pride and joy:</span>
+          <span style = {{ fontStyle: 'italic' }}>And finally, my poorly coded, unfinished, ugly pride and joy:</span>
           <br /> <br />
-          <a href="https://codepen.io/duckjordan/pen/pQpEPv" target="_blank">Texas Holdem</a>
+          <a style = {{ color: 'black' }} href="https://codepen.io/duckjordan/pen/pQpEPv" target="_blank">Texas Holdem</a>
         </div>,
         id: uuid.v4(),
         visible: false
@@ -82,18 +82,6 @@ class IconContainer extends Component {
       },
     ],
     margin: false
-  }
-
-  containerStyles = () => {
-    return({
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'flex-start',
-      width: '400px',
-      position: 'absolute',
-      top: '5%',
-      right: 'calc(50vw - 220px)'
-    });
   }
 
   openContent = id => {
@@ -128,16 +116,14 @@ class IconContainer extends Component {
 
   render() {
     return (
-      <div style = { this.containerStyles() }>
-        {this.state.icons.map(icon => (
-          <Icon 
-            icon = { icon }
-            openContent = { this.openContent }
-            addDocClick = { this.addDocClick }
-            removeDocClick = { this.removeDocClick }
-          />
-        ))}
-      </div>
+      this.state.icons.map(icon => (
+        <Icon 
+          icon = { icon }
+          openContent = { this.openContent }
+          addDocClick = { this.addDocClick }
+          removeDocClick = { this.removeDocClick }
+        />
+      ))
     )
   }
 }

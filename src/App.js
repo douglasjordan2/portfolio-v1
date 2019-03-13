@@ -1,31 +1,76 @@
 import React, { Component } from 'react';
 import './index.css';
+import Breakpoint, { BreakpointProvider } from 'react-socks';
 
 import Logo from './components/Logo';
 import Icons from './components/Icons/IconContainer';
 import ReactProjects from './components/ReactProjects/ReactProjects';
+import Pomodoro from './components/ReactProjects/Pomodoro';
 
 
 export default 
 class App extends Component {
+  state = {
+    pomodoro: false
+  }
 
   render() {
     return (
-      <div 
-        style = { body }
-      >
-        <div style = {{ 
-          marginTop: '13%', 
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center'
-        }}>
-          <Logo />
-          <Icons />
-          <ReactProjects />
-        </div>
-        <span style = { under }>personal portfolio; a work in progress</span>
-      </div>
+      <BreakpointProvider>
+        <Breakpoint phone up>
+          <div 
+            style = { body }
+          >
+            <img 
+              src = { require('./views/selfportrait.png') } 
+              alt=""
+              style = {{
+                height: '350px',
+                width: 'auto',
+              }}
+            />
+            <div
+              style = {{
+                display: 'flex',
+                justifyContent: 'space-between',
+                width: '250px',
+                position: 'absolute',
+                top: '5vh',
+                right: 'calc(50% - 125px)'
+              }}
+            >
+              <Icons />
+            </div>
+            <div
+              style = {{
+                position: 'absolute',
+                bottom: '0',
+                left: 'calc(50% - 8vw)',
+              }}
+            >
+              <Logo />
+            </div>
+            <div
+              style = {{
+                position: 'absolute',
+                bottom: '0',
+                right: '0'
+              }}
+            >
+              <ReactProjects />
+            </div>
+            <div style = {{
+              position: 'absolute',
+              right: '0',
+              top: '0',
+            }}>
+              <Pomodoro />
+            </div>
+          </div>
+        </Breakpoint>
+        <Breakpoint phone only>
+        </Breakpoint>
+      </BreakpointProvider>
     );
   }
 }
@@ -37,18 +82,17 @@ const body = {
   color: 'white',
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'flex-start',
+  justifyContent: 'center',
   alignItems: 'center',
-  overflow: 'none',
 }
 
 const under = {
   position: 'absolute',
   bottom: '0',
+  right: '0',
   fontStyle: 'italic',
   borderRadius: '5px',
-  padding: '1% 50px',
-  textAlign: 'center',
+  padding: '1% 2vw',
   color: '#e9e9e9',
-  fontSize: '1.2rem'
+  fontSize: '0.8rem'
 }

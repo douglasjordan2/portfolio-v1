@@ -8,11 +8,12 @@ class Search extends Component {
     return (
       <div style = {{
         display: 'flex',
+        justifyContent: 'space-around',
         position: 'absolute',
-        top: '11.5%',
-        right: '5%',
-        marginLeft: '2%',
-        zIndex: '1'
+        top: '11%',
+        right: '2%',
+        zIndex: '1',
+        width: '48%'
       }}>
         <SearchBar 
           handleChange = { this.props.handleChange }

@@ -8,10 +8,9 @@ function Logo() {
         src = { require('../views/logo.png') } 
         alt=""
         style = {{
-          width: '500px',
+          width: '15vw',
           height: 'auto',
           filter: 'invert(100%)',
-          marginLeft: '8%'
         }}
       />
     </div>

@@ -25,21 +25,23 @@ class ReactProjects extends Component {
       border: '2px solid #e9e9e9',
       height: active ? '60px' : '30px',
       textAlign: 'center',
-      width: active ? '180px' : '125px',
-      marginTop: active ? '2%' : '8%',
+      width: active ? '175px' : '125px',
       transition: 'all 0.5s ease-out',
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center',
-      cursor: 'default'
+      justifyContent: 'space-around',
+      cursor: 'default',
+      position: 'absolute',
+      top: '5vh',
+      left: '5vh'
     });
   }
 
   containerStyles = active => {
     return ({
       display: 'flex',
-      justifyContent: 'space-around',
-      width: '75%',
+      justifyContent: 'space-evenly',
+      width: '80%',
       fontSize: '2rem',
     });
   }
@@ -58,24 +60,29 @@ class ReactProjects extends Component {
 
   showAppStyles = active => {
     return ({
-      height: '500px',
-      width: '420px',
       position: 'absolute',
-      top: active ? 'calc(50vh - 250px)' : '100vh',
-      left: 'calc(50vw - 210px)',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
+      bottom: '5vh',
+      left: '5vh',
       background: '#e9e9e9',
       zIndex: active ? '2' : '-1',
       opacity: active ? '1' : '0',
-      transition: active ? 'opacity 0.5s ease-in' : 'opacity 0.5s ease-in, top 1s ease-out, z-index 0.1s linear 1s'
+      transition: active ? 'opacity 0.5s ease-in' : 'opacity 0.5s ease-in, top 1s ease-out, z-index 0.1s linear 1s',
+      padding: '30px 20px 40px 20px',
+      width: '25%',
+      height: '63%'
     });
   }
 
   render() {
     return (
-      <>
+      <div style = {{
+        height: '100vh',
+        width: '100vw',
+        position: 'relative',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
         <div style = { this.buttonStyles(this.state.active) }
           onMouseEnter = { () => this.open() }
           onMouseLeave = { () => this.close() }
@@ -116,7 +123,7 @@ class ReactProjects extends Component {
           </div>
           <TodoApp />
         </div>
-      </>
+      </div>
     )
   }
 }
