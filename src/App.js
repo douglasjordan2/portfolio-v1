@@ -1,98 +1,77 @@
 import React, { Component } from 'react';
 import './index.css';
-import Breakpoint, { BreakpointProvider } from 'react-socks';
 
-import Logo from './components/Logo';
-import Icons from './components/Icons/IconContainer';
-import ReactProjects from './components/ReactProjects/ReactProjects';
-import Pomodoro from './components/ReactProjects/Pomodoro';
-
+import Icons from './Layout/Icons/IconContainer';
+import ReactProjects from './Layout/ReactProjects/ReactProjects';
+import Signature from './Layout/Signature';
+import Logo from './Layout/Logo';
 
 export default 
 class App extends Component {
-  state = {
-    pomodoro: false
-  }
-
   render() {
     return (
-      <BreakpointProvider>
-        <Breakpoint phone up>
-          <div 
-            style = { body }
-          >
-            <img 
-              src = { require('./views/selfportrait.png') } 
-              alt=""
-              style = {{
-                height: '350px',
-                width: 'auto',
-              }}
+      <div style = { desktopContainer }>
+        <div style = { pageLeftContent }>
+          <div style = { desktopIconStyles }>
+            <Icons />
+          </div> 
+          <ReactProjects />
+        </div>
+        <div style = { logoContainer }>
+          <div style = { logoImg }>
+            <Logo 
+              topOpen = { this.openContent }
             />
-            <div
-              style = {{
-                display: 'flex',
-                justifyContent: 'space-between',
-                width: '250px',
-                position: 'absolute',
-                top: '5vh',
-                right: 'calc(50% - 125px)'
-              }}
-            >
-              <Icons />
-            </div>
-            <div
-              style = {{
-                position: 'absolute',
-                bottom: '0',
-                left: 'calc(50% - 8vw)',
-              }}
-            >
-              <Logo />
-            </div>
-            <div
-              style = {{
-                position: 'absolute',
-                bottom: '0',
-                right: '0'
-              }}
-            >
-              <ReactProjects />
-            </div>
-            <div style = {{
-              position: 'absolute',
-              right: '0',
-              top: '0',
-            }}>
-              <Pomodoro />
-            </div>
           </div>
-        </Breakpoint>
-        <Breakpoint phone only>
-        </Breakpoint>
-      </BreakpointProvider>
+          <div style = { logoText }>
+            <Signature />
+          </div>
+        </div>
+      </div>
     );
   }
 }
 
-const body = {
+const desktopContainer = {
   height: '100vh',
   width: '100vw',
-  background: 'radial-gradient(at 0% 0%, #090a0a, #151616 40%, #151617 45%)',
+  background: 'linear-gradient(145deg, #090a0a 45%, #151617 75%)',
   color: 'white',
+  display: 'flex',
+  justifyContent: 'space-between'
+}
+
+const pageLeftContent = {
+  display: 'flex',
+  flexDirection: 'column',
+  width: '55%',
+  padding: '0 2%',
+  justifyContent: 'space-between',
+  alignItems: 'center'
+}
+
+const desktopIconStyles = {
+  display: 'flex',
+  justifyContent: 'space-around',
+  alignItems: 'center',
+  width: '100%',
+  padding: '2.5% 5%',
+  position: 'relative',
+  marginTop: '2.5%'
+}
+
+const logoContainer = {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+  width: '45%'
 }
 
-const under = {
-  position: 'absolute',
-  bottom: '0',
-  right: '0',
-  fontStyle: 'italic',
-  borderRadius: '5px',
-  padding: '1% 2vw',
-  color: '#e9e9e9',
-  fontSize: '0.8rem'
+const logoImg = {
+  height: '75vh',
+}
+
+const logoText = {
+  width: '50%'
 }

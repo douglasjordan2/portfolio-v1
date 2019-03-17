@@ -16,7 +16,7 @@ class NumberButton extends Component {
       background: clicked ? 'black' : 'white',
       border: '1px solid gray',
       height: '20%',
-      width: this.props.btn.num === 'clear' || this.props.btn.num == '0' ? '100%' : '32.25%',
+      width: this.props.btn.num === 'clear' || this.props.btn.num == '0' ? '100%' : '33.3%',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
