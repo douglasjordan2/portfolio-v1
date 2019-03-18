@@ -265,7 +265,7 @@ export default class Left extends Component {
   windowsContainerMobile = () => {
     return ({
       position: 'relative',
-      height: '75%',
+      height: '70%',
       width: this.state.windowWidth,
       transition: this.state.windowWidth == '100%' ? 'none' : 'width 0.5s linear'
     })
