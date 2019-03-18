@@ -214,6 +214,23 @@ export default class Left extends Component {
     });
   }
 
+  buttonMobile = hover => {
+    return ({
+      border: hover ? '0px solid #e7e7e7' : '2px solid #e7e7e7',
+      padding: hover ? '12px 22px' : '10px 20px',
+      margin: '5% 0',
+      fontSize: hover ? '1.7rem' : '1.3rem',
+      cursor: 'pointer',
+      position: 'relative',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '250px',
+      transition: hover ? 'all 0.2s ease-out' : 'all 0.1s ease-in',
+      position: 'relative'
+    });
+  }
+
   reactString = hover => {
     return ({
       fontSize: '1.3rem',
@@ -374,7 +391,7 @@ export default class Left extends Component {
           }) }
         </div>
         <div 
-          style = { this.button(this.state.hover) }
+          style = { this.buttonMobile(this.state.hover) }
           onClick = { this.state.hover ? null : () => this.hover() }
         >
           <span style = { this.reactString(this.state.hover) }>React Projects</span>

@@ -20,7 +20,7 @@ export default function Portrait() {
       alt = "self portrait"
       style = {{
         height: 'auto',
-        maxWidth: '350px'
+        maxWidth: '380px'
       }}
     />
     </MediaQuery>

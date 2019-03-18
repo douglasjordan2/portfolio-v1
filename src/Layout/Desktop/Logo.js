@@ -54,13 +54,13 @@ const signature = {
 }
 
 const mobileLogo = {
-  width: '40%',
+  width: '100%',
   height: '100vh',
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'flex-end',
+  justifyContent: 'center',
   alignItems: 'center',
-  paddingBottom: '5%'
+  paddingTop: '10%'
 }
 
 const portraitMobile = {
@@ -72,6 +72,6 @@ const portraitMobile = {
 }
 
 const signatureMobile = {
-  width: '70%',
+  width: '50%',
   filter: 'invert(100%)'
 }
