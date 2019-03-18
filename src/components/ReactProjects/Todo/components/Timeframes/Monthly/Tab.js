@@ -25,7 +25,7 @@ class Tab extends Component {
       padding: '1% 2%',
       position: 'absolute',
       top: '0',
-      left: '21%',
+      left: '19%',
       opacity: this.props.activeTab ? '0.5' : '1',
       cursor: 'pointer'
     });
