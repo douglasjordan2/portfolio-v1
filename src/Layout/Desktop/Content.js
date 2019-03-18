@@ -240,7 +240,7 @@ export default class Left extends Component {
         item.open = true
       }
       return item;
-    }) }), 500)
+    }) }), 800)
   }
 
   render() {
