@@ -169,7 +169,7 @@ const dailyTodos = [
 
 const monthlyTodos = [
   {
-    title: 'Give this website a responsive design',
+    title: 'Use iframes to better display Projects content',
     id: uuid.v4(),
     complete: false,
     position: 1
@@ -181,7 +181,7 @@ const monthlyTodos = [
     position: 2
   },
   {
-    title: 'Use iframes to better display Projects content',
+    title: 'Give this website a responsive design',
     id: uuid.v4(),
     complete: false,
     position: 3

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MediaQuery from 'react-responsive';
 import TodoList from '../../TodoComponents/TodoList';
 
 export default 
@@ -25,7 +26,20 @@ class Tab extends Component {
       padding: '1% 2%',
       position: 'absolute',
       top: '0',
-      left: '19%',
+      left: '18%',
+      opacity: this.props.activeTab ? '0.5' : '1',
+      cursor: 'pointer'
+    });
+  }
+
+  tabStylesMobile = () => {
+    return ({
+      background: this.props.activeTab ? '#b0aba0' : '#757571',
+      border: '1px solid black',
+      padding: '1% 2%',
+      position: 'absolute',
+      top: '0',
+      left: '21%',
       opacity: this.props.activeTab ? '0.5' : '1',
       cursor: 'pointer'
     });
@@ -34,12 +48,22 @@ class Tab extends Component {
   render() {
     return (
       <div style = { container }>
+        <MediaQuery minWidth = {601}>
         <span 
           style = { this.tabStyles() }
           onClick = { this.props.activeTab ? () => this.props.changeActive() : null }
         >
           Monthly
         </span>
+        </MediaQuery>
+        <MediaQuery maxWidth = {600}>
+        <span 
+          style = { this.tabStylesMobile() }
+          onClick = { this.props.activeTab ? () => this.props.changeActive() : null }
+        >
+          Monthly
+        </span>
+        </MediaQuery>
         <div style = { this.listContainer() }>
           <TodoList 
             todos = { this.props.todos }

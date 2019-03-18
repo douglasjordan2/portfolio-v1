@@ -25,7 +25,7 @@ export default class ReactContent extends Component {
     setTimeout(() => this.setState({ top: '0', opacity: '1' }), 1)
   }
 
-  render() { console.log(this.props)
+  render() {
     const { content } = this.props.item
     return (
       <div 

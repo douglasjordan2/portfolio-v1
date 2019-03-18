@@ -66,7 +66,8 @@ const addTodo = {
 const inputText = {
   width: '96%',
   padding: '2%',
-  marginBottom: '1%'
+  marginBottom: '1%',
+  color: '#151617'
 }
 
 const buttonsContainer = {

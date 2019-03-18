@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import MediaQuery from 'react-responsive';
 
 export default class Pomodoro extends Component {
   state = {
@@ -35,6 +36,8 @@ export default class Pomodoro extends Component {
 
   render() {
     return (
+      <>
+      <MediaQuery minWidth = {601}>
       <div style = {{
         width: '225px'
       }}>
@@ -61,6 +64,21 @@ export default class Pomodoro extends Component {
           </a>
         </div>
       </div>
+      </MediaQuery>
+      <MediaQuery maxWidth = { 600 }>
+      <div style = {{
+        width: '100px',
+      }}>
+        <div style = {{
+          fontSize: '1.5rem',
+          textAlign: 'center'
+        }}>
+          <span style = {{ textAlign: 'center', cursor: 'pointer', fontSize: '1.2rem' }} onClick = { () => this.startPomedoro() }>{ this.state.start ? this.state.rest ? 'Rest: ' : 'Work: ' : 'Start: ' }</span><br />
+          { this.state.break ? this.state.restMin : this.state.workMin } : { this.state.seconds < 10 ? `0${this.state.seconds}` : this.state.seconds }
+        </div>
+      </div>
+      </MediaQuery>
+      </>
     )
   }
 }

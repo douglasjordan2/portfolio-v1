@@ -10,7 +10,7 @@ class extends Component {
       padding: isComplete ? '0' : '2%',
       border: '1px solid black',
       opacity: isActive ? '1' : '0',
-      marginTop: isActive ? '1%' : '5%',
+      marginTop: isActive ? '1.5%' : '5%',
       marginBottom: '0',
       transition: isComplete ? `all 1s ease-out` : `margin-top 1s ease-out ${position / 5}s, opacity 1s ease-out ${position / 3}s`,
       background: '#6abed8',
