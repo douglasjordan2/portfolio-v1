@@ -110,6 +110,7 @@ export default class Left extends Component {
     return ({
       position: 'absolute',
       bottom: open ? hover ? '5px' : '-15px' : '100%',
+      display: open ? 'block' : 'none',
       left: '70%'
     })
   }
@@ -117,7 +118,8 @@ export default class Left extends Component {
   pomodoroStylesMobile = (open) => {
     return ({
       position: 'fixed',
-      bottom: open ? '5px' : '100%',
+      bottom: open ? '5px' : '200%',
+      display: open ? 'block' : 'none',
       right: '0'
     })
   }
