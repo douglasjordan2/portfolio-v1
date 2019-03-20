@@ -7,7 +7,7 @@ class extends Component {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      padding: isComplete ? '0' : '2%',
+      padding: isComplete ? '2px' : '2%',
       border: '1px solid black',
       opacity: isActive ? '1' : '0',
       marginTop: isActive ? '1.5%' : '5%',

@@ -211,7 +211,7 @@ export default class Left extends Component {
       justifyContent: 'center',
       alignItems: 'center',
       width: '175px',
-      transition: hover ? 'all 0.2s ease-out' : 'all 0.1s ease-in',
+      transition: hover ? 'all 0.1s ease-out' : 'all 0.1s ease-in',
       position: 'relative'
     });
   }
@@ -228,7 +228,7 @@ export default class Left extends Component {
       justifyContent: 'center',
       alignItems: 'center',
       width: '250px',
-      transition: hover ? 'all 0.2s ease-out' : 'all 0.1s ease-in',
+      transition: hover ? 'all 0.1s ease-out' : 'all 0.3s ease-out',
       position: 'relative'
     });
   }
@@ -237,8 +237,8 @@ export default class Left extends Component {
     return ({
       fontSize: '1.3rem',
       opacity: hover ? '0' : '1',
-      zIndex: hover ? '0' : '1',
-      transition: 'opacity 0.3s ease-in'
+      zIndex: hover ? '-1' : '1',
+      transition: hover ? 'none' : 'opacity 0.5s ease-out'
     });
   }
 
@@ -249,9 +249,9 @@ export default class Left extends Component {
       justifyContent: 'space-between',
       width: '150px',
       fontSize: '1.5rem',
-      zIndex: hover ? '0' : '1',
+      zIndex: hover ? '1' : '-1',
       opacity: hover ? '1' : '0',
-      transition: 'opacity 0.5s ease-out'
+      transition: hover ? 'opacity 0.5s ease-out' : 'none'
     });
   }
 

@@ -148,7 +148,7 @@ class App extends React.Component {
 
 const dailyTodos = [
   {
-    title: 'Meeting with Don @ TAG',
+    title: 'Research animation libraries',
     id: uuid.v4(),
     complete: false,
     position: 1
@@ -181,17 +181,17 @@ const monthlyTodos = [
     position: 2
   },
   {
-    title: 'Give this website a responsive design',
+    title: 'Apply for Jobs',
     id: uuid.v4(),
     complete: false,
     position: 3
   },
   {
-    title: 'Apply for Internships',
+    title: 'Give this website a responsive design',
     id: uuid.v4(),
-    complete: false,
+    complete: true,
     position: 4
-  }
+  },
 ]
 
 const container = {
