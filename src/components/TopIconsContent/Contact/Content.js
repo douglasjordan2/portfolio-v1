@@ -20,10 +20,6 @@ export default function Content() {
         color: '#151617',
         fontSize: '1.3rem'
       }}>douglasjordan2@gmail.com</span>
-      <span style = {{
-        color: '#151617',
-        fontSize: '1.3rem'
-      }}>(563) 200-4772</span>
     </div>
   )
 }
