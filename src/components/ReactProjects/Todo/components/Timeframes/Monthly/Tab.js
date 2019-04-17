@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MediaQuery from 'react-responsive';
+// import MediaQuery from 'react-responsive';
 import TodoList from '../../TodoComponents/TodoList';
 
 export default 
@@ -48,22 +48,22 @@ class Tab extends Component {
   render() {
     return (
       <div style = { container }>
-        <MediaQuery minWidth = {601}>
+        <div>
         <span 
           style = { this.tabStyles() }
           onClick = { this.props.activeTab ? () => this.props.changeActive() : null }
         >
           Monthly
         </span>
-        </MediaQuery>
-        <MediaQuery maxWidth = {600}>
+        </div>
+        <div>
         <span 
           style = { this.tabStylesMobile() }
           onClick = { this.props.activeTab ? () => this.props.changeActive() : null }
         >
           Monthly
         </span>
-        </MediaQuery>
+        </div>
         <div style = { this.listContainer() }>
           <TodoList 
             todos = { this.props.todos }

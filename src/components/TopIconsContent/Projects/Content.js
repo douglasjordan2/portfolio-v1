@@ -1,38 +1,138 @@
-import React from 'react'
+import React, { Component } from 'react';
+import Carousel from './styles';
+import { frames } from '../../../Data/Projects';
 
-export default function Content() {
-  return (
-    <div style = {{ fontSize: '1.2rem', lineHeight: '29px', color: '#151617' }}>
-      <h1 style = {{ fontSize: '1.5rem', marginBottom: '10px', fontStyle: 'italic', color: '#151617' }}>Projects:</h1>
-      <a style = {{ color: '#151617' }} href="https://zen-wright-0d9b37.netlify.com/user-interface/great-idea-website/" target="_blank">Great Idea - pixel perfect design</a>
-      <br />
-      <a style = {{ color: '#151617' }} href="https://zen-wright-0d9b37.netlify.com/ui-iii-flexbox/great-idea/index.html" target="_blank">Great Idea - flexbox</a>
-      <br />
-      <a style = {{ color: '#151617' }} href="https://zen-wright-0d9b37.netlify.com/sprint-challenge--user-interface/index.html" target="_blank">Sprint Challenge - multi-page with mobile styles</a>
-      <br />
-      <a style = {{ color: '#151617' }} href="https://zen-wright-0d9b37.netlify.com/responsive-web-design-i/index.html" target="_blank">Great Idea - adaptive design</a>
-      <br />
-      <a style = {{ color: '#151617' }} href="https://zen-wright-0d9b37.netlify.com/responsive-web-design-ii/index.html" target="_blank">Great Idea - responsive design</a>
-      <br />
-      <a style = {{ color: '#151617' }} href="https://zen-wright-0d9b37.netlify.com/preprocessing-ii/index.html" target="_blank">Fun Bus - preprocessing (LESS)</a>
-      <br />
-      <a style = {{ color: '#151617' }} href="https://zen-wright-0d9b37.netlify.com/sprint-challenge--advanced-css/index.html" target="_blank">Sprint Challenge - SpaceWalkers (LESS)</a>
-      <br />
-      {/* 
-      
-      
-      IMPORTANT -- take screenshots of javascript challenges 1 through 4 and do something cool with them (show on hover?). they don't have any rendering, but they should be shown in some way
-      
-      */}
-      <a style = {{ color: '#151617' }} href="https://zen-wright-0d9b37.netlify.com/newsfeed-components/index.html" target="_blank">Newsfeed - javascript components</a>
-      <br />
-      <a style = {{ color: '#151617' }} href="https://zen-wright-0d9b37.netlify.com/tabs-components/index.html" target="_blank">Tabs - javascript components</a>
-      <br />
-      <a style = {{ color: '#151617' }} href="https://zen-wright-0d9b37.netlify.com/user-interface-project-week/index.html" target="_blank">Project Week - final project for all previous units</a>
-      <br /> <br />
-      <span style = {{ fontStyle: 'italic', color: '#151617' }}>And finally, my poorly coded, unfinished, ugly pride and joy:</span>
-      <br /> <br />
-      <a style = {{ color: '#151617' }} href="https://codepen.io/duckjordan/pen/pQpEPv" target="_blank">Texas Holdem</a>
-    </div>
-  )
+export default class Content extends Component {
+  state = {
+    frames: frames,
+    visible: {},
+    left: {},
+    right: {}
+  }
+
+  componentDidMount() {
+    let frames = this.state.frames;
+    let visible = frames[0];
+    let left = frames[frames.length - 1];
+    let right = frames[1];
+
+    frames = frames.map(frame => {
+      if(frame == visible) {
+        frame.visible = true;
+      } else if(frame == left) {
+        frame.left = true;
+      } else if(frame.right == right) {
+        frame.right = true;
+      }
+      return frame
+    })
+
+    this.setState({ frames: frames, visible: visible, left: left, right: right })
+  }
+  
+  shiftRight = () => {
+    let frames = this.state.frames;
+    let visible;
+    let left;
+    let right;
+
+    for(let i = 0; i < frames.length; i++) {
+      if(this.state.visible === frames[i]) {
+        right = frames[i];
+        if(i === 0) {
+          visible = frames[frames.length - 1];
+          left = frames[frames.length - 2];
+        } else if(i === 1) {
+          visible = frames[0];
+          left = frames[frames.length - 1]
+        } else {
+          visible = frames[i - 1];
+          left = frames[i - 2]
+        }
+      }
+    }
+
+    this.setState({ frames: this.state.frames.map(frame => {
+      if(frame === visible) {
+        frame.right = false;
+        frame.left = false;
+        frame.visible = true;
+        frame.hold = false;
+      } else if(frame === right) {
+        frame.left = false;
+        frame.visible = false;
+        frame.right = true;
+        frame.hold = false;
+      } else if(frame === left) {
+        frame.right = false;
+        frame.visible = false;
+        frame.left = true;
+        frame.hold = true;
+      } else {
+        frame.right = false;
+        frame.visible = false;
+        frame.left = false;
+        frame.hold = false;
+      }
+      return frame;
+    }), visible: visible, left: left, right: right })
+  }
+
+  shiftLeft = () => {
+    let frames = this.state.frames;
+    let visible;
+    let left;
+    let right;
+    
+    for(let i = frames.length - 1; i >= 0; i--) {
+      if(this.state.visible === frames[i]) {
+        left = frames[i];
+        if(i === frames.length - 1) {
+          visible = frames[0];
+          right = frames[1];
+        } else if(i === frames.length - 2) {
+          visible = frames[frames.length - 1];
+          right = frames[0];
+        } else {
+          visible = frames[i + 1]
+          right = frames[i + 2];
+        }
+      }
+    }
+
+    this.setState({ frames: this.state.frames.map(frame => {
+      if(frame === visible) {
+        frame.right = false;
+        frame.left = false;
+        frame.visible = true;
+        frame.hold = false;
+      } else if(frame === right) {
+        frame.left = false;
+        frame.visible = false;
+        frame.right = true;
+        frame.hold = true;
+      } else if(frame === left) {
+        frame.right = false;
+        frame.visible = false;
+        frame.left = true;
+        frame.hold = false;
+      } else {
+        frame.right = false;
+        frame.visible = false;
+        frame.left = false;
+        frame.hold = false;
+      }
+      return frame;
+    }), visible: visible, left: left, right: right })
+  }
+
+  render() {
+    return (
+      <Carousel
+        shiftLeft = { () => this.shiftLeft() }
+        data = { this.state.frames }
+        shiftRight = { () => this.shiftRight() }
+      />
+    );
+  }
 }
